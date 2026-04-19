@@ -77,6 +77,7 @@ button,input,select,textarea{font-family:var(--font);}
   border:0.5px solid var(--glassb);border-radius:var(--r);
   padding:15px;margin-bottom:10px;
 }
+[data-theme="light"] .gc{background:var(--bg2);}
 .gc-sm{padding:11px 13px;}
 .gc-flush{padding:0;}
 
@@ -91,6 +92,7 @@ button,input,select,textarea{font-family:var(--font);}
   border-radius:13px;margin-bottom:7px;cursor:pointer;
   transition:opacity 0.2s,transform 0.15s;
 }
+[data-theme="light"] .hi{background:var(--bg2);}
 .hi:active{transform:scale(0.98);}
 .hi.done{opacity:0.55;}
 .hi.done .hname{text-decoration:line-through;color:var(--t3);}
@@ -125,6 +127,7 @@ button,input,select,textarea{font-family:var(--font);}
   border-radius:var(--r);padding:18px;margin-bottom:10px;
   display:flex;align-items:center;gap:16px;
 }
+[data-theme="light"] .shero{background:var(--bg2);}
 .snum{font-family:'DM Mono',monospace;font-size:48px;color:var(--c2);line-height:1;letter-spacing:-3px;font-weight:300;}
 .slabel{font-size:12px;color:var(--t2);margin-top:2px;}
 .smax{font-size:11px;color:var(--t3);margin-top:4px;}
@@ -154,7 +157,7 @@ button,input,select,textarea{font-family:var(--font);}
 .b-a{background:rgba(240,171,61,0.15);color:var(--c2);}
 
 /* MILESTONE */
-.ms{display:flex;align-items:center;gap:11px;padding:11px 13px;margin-bottom:7px;background:var(--bg1);border:0.5px solid var(--glassb);border-radius:12px;}
+.ms{display:flex;align-items:center;gap:11px;padding:11px 13px;margin-bottom:7px;background:var(--bg2);border:0.5px solid var(--glassb);border-radius:12px;}
 .ms.locked{opacity:0.35;}
 .ms-ico{font-size:22px;line-height:1;width:32px;text-align:center;}
 .ms-info{flex:1;}
@@ -177,7 +180,7 @@ button,input,select,textarea{font-family:var(--font);}
 
 /* STATS */
 .sgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px;}
-.scard{background:var(--bg1);border:0.5px solid var(--glassb);border-radius:13px;padding:13px;}
+.scard{background:var(--bg2);border:0.5px solid var(--glassb);border-radius:13px;padding:13px;}
 .sval{font-family:'DM Mono',monospace;font-size:28px;line-height:1.1;font-weight:300;}
 .slbl{font-size:10px;color:var(--t3);margin-top:3px;}
 
@@ -212,7 +215,7 @@ button,input,select,textarea{font-family:var(--font);}
 .nb svg{width:21px;height:21px;}
 
 /* MODAL */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;align-items:flex-end;justify-content:center;backdrop-filter:blur(5px);}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:200;align-items:flex-end;justify-content:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
 .overlay.open{display:flex;animation:oi 0.18s ease;}
 @keyframes oi{from{opacity:0;}to{opacity:1;}}
 .modal{
@@ -220,7 +223,9 @@ button,input,select,textarea{font-family:var(--font);}
   border:0.5px solid var(--glassb);border-radius:var(--r) var(--r) 0 0;
   width:100%;max-width:430px;padding:18px 18px calc(var(--safe-b)+18px);
   animation:mu 0.28s cubic-bezier(0.34,1.1,0.64,1);
+  max-height:90vh;overflow-y:auto;
 }
+[data-theme="light"] .modal{background:rgba(245,243,255,0.97);}
 @keyframes mu{from{transform:translateY(100%);}to{transform:translateY(0);}}
 .modal-h{width:34px;height:4px;background:var(--glassb);border-radius:2px;margin:0 auto 16px;}
 .modal h3{font-size:18px;font-weight:400;margin-bottom:16px;font-family:'DM Mono',monospace;letter-spacing:-0.3px;}
@@ -231,6 +236,9 @@ button,input,select,textarea{font-family:var(--font);}
 .if{width:100%;background:var(--bg2);border:0.5px solid var(--glassb);border-radius:var(--rs);padding:10px 12px;color:var(--t1);font-size:15px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;font-family:var(--font);}
 .if:focus{border-color:rgba(123,110,246,0.5);}
 .if::placeholder{color:var(--t3);}
+input[type=time].if,input[type=date].if{color-scheme:inherit;}
+[data-theme="light"] input[type=time].if,[data-theme="light"] input[type=date].if{color-scheme:light;}
+[data-theme="dark"] input[type=time].if,[data-theme="dark"] input[type=date].if{color-scheme:dark;}
 
 .cp{display:flex;gap:7px;flex-wrap:wrap;}
 .co{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2.5px solid transparent;transition:border-color 0.15s,transform 0.15s;}
@@ -255,7 +263,7 @@ button,input,select,textarea{font-family:var(--font);}
 .toggle.on::after{transform:translateX(19px);}
 
 /* NOTIF PREVIEW */
-.np{background:var(--bg1);border:0.5px solid var(--glassb);border-radius:var(--r);padding:13px;margin-bottom:8px;}
+.np{background:var(--bg2);border:0.5px solid var(--glassb);border-radius:var(--r);padding:13px;margin-bottom:8px;}
 .nph{display:flex;align-items:center;gap:8px;margin-bottom:9px;}
 .npi{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
 .npa{font-size:11px;font-weight:600;color:var(--t2);flex:1;}
@@ -312,7 +320,7 @@ button,input,select,textarea{font-family:var(--font);}
 
 /* COUNTDOWN */
 .countdown{
-  background:var(--bg1);border:0.5px solid var(--glassb);border-radius:var(--r);
+  background:var(--bg2);border:0.5px solid var(--glassb);border-radius:var(--r);
   padding:14px 16px;margin-bottom:10px;
   display:flex;align-items:center;gap:12px;
 }
@@ -391,6 +399,40 @@ button,input,select,textarea{font-family:var(--font);}
 .num-spin{display:flex;align-items:center;gap:6px;}
 .spin-btn{width:30px;height:30px;border-radius:50%;background:var(--bg2);border:0.5px solid var(--glassb);color:var(--t1);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:var(--font);}
 .spin-val{font-family:'DM Mono',monospace;font-size:18px;font-weight:300;min-width:30px;text-align:center;color:var(--t1);}
+
+/* ═══ TIMELINE HORARIO ═══ */
+.tl-wrap{display:flex;position:relative;padding-bottom:20px;}
+.tl-hours{width:44px;flex-shrink:0;position:relative;}
+.tl-hour-label{
+  position:absolute;right:8px;
+  font-family:'DM Mono',monospace;font-size:10px;color:var(--t3);
+  transform:translateY(-7px);line-height:1;
+}
+.tl-grid{flex:1;position:relative;border-left:0.5px solid var(--sep);}
+.tl-line{
+  position:absolute;left:0;right:0;
+  border-top:0.5px solid var(--sep);
+}
+.tl-line.half{border-top-style:dashed;opacity:0.5;}
+.tl-now-line{
+  position:absolute;left:-1px;right:0;
+  border-top:1.5px solid var(--c4);z-index:5;
+}
+.tl-now-dot{
+  position:absolute;left:-4px;top:-4px;
+  width:8px;height:8px;border-radius:50%;background:var(--c4);
+}
+.tl-block{
+  position:absolute;left:4px;right:4px;
+  border-radius:8px;padding:5px 8px;overflow:hidden;
+  cursor:pointer;transition:opacity 0.15s;
+  border-left:3px solid transparent;
+}
+[data-theme="light"] .tl-block{filter:saturate(1.1);}
+.tl-block:active{opacity:0.75;}
+.tl-block-title{font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tl-block-sub{font-size:10px;opacity:0.75;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tl-block-dur{font-family:'DM Mono',monospace;font-size:9px;opacity:0.6;margin-top:2px;}
 </style>
 </head>
 <body>
@@ -445,15 +487,15 @@ button,input,select,textarea{font-family:var(--font);}
 <!-- HORARIO -->
 <div class="screen" id="scr-horario">
   <div class="topbar">
-    <div><div class="tb-title">Horario</div><div class="tb-sub">Bloques de tiempo</div></div>
+    <div><div class="tb-title">Horario</div><div class="tb-sub" id="sch-sub">Lunes</div></div>
     <div class="tb-right">
       <button class="ibtn" onclick="toggleTheme()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
       <button class="ibtn ac" onclick="openModal('m-bloque')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
     </div>
   </div>
-  <div class="content">
+  <div class="content" style="padding-bottom:0;">
     <div class="stabs" id="sch-tabs"></div>
-    <div id="sch-blocks"></div>
+    <div id="sch-timeline"></div>
   </div>
 </div>
 
@@ -623,7 +665,7 @@ button,input,select,textarea{font-family:var(--font);}
     <div class="gc" style="padding:0 14px;">
       <div class="srow"><div><div class="srow-l" style="color:var(--c4);">Borrar todos los datos</div><div class="srow-s">No se puede deshacer</div></div><button onclick="resetData()" style="background:rgba(232,97,76,0.12);color:var(--c4);border:none;border-radius:var(--rxs);padding:6px 12px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);">Borrar</button></div>
     </div>
-    <div style="text-align:center;padding:26px 0;color:var(--t3);font-size:11px;line-height:1.9;">MiDía v4.0<br>En Safari → Compartir → Añadir a pantalla de inicio</div>
+    <div style="text-align:center;padding:26px 0;color:var(--t3);font-size:11px;line-height:1.9;">MiDía v6.0<br>En Safari → Compartir → Añadir a pantalla de inicio</div>
   </div>
 </div>
 
@@ -661,7 +703,10 @@ button,input,select,textarea{font-family:var(--font);}
     <h3 id="m-habit-ttl">Nuevo hábito</h3>
     <input type="hidden" id="edit-id">
     <div class="ig"><label class="il">Nombre</label><input type="text" id="nh-n" class="if" placeholder="ej. Meditación, Gym, Leer..."></div>
-    <div class="ig"><label class="il">Hora</label><input type="time" id="nh-t" class="if" value="08:00"></div>
+    <div class="ig" id="nh-hora-simple" style="display:none;">
+      <label class="il">Hora de recordatorio</label>
+      <input type="time" id="nh-t" class="if" value="08:00">
+    </div>
     <div class="ig">
       <label class="il">Color</label>
       <div class="cp" id="nh-cp">
@@ -685,6 +730,20 @@ button,input,select,textarea{font-family:var(--font);}
         <button class="dt on" data-d="6" onclick="tDay(this)">D</button>
       </div>
     </div>
+    <div class="ig">
+      <label class="il">Horario (opcional)</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div>
+          <div style="font-size:10px;color:var(--t3);margin-bottom:4px;font-weight:500;">Inicio</div>
+          <input type="time" id="nh-ts" class="if" value="08:00">
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--t3);margin-bottom:4px;font-weight:500;">Fin</div>
+          <input type="time" id="nh-te" class="if" value="09:00">
+        </div>
+      </div>
+      <div style="font-size:10px;color:var(--t3);margin-top:5px;">Aparecerá en el horario del día y en la agenda</div>
+    </div>
     <button class="btn-p" onclick="saveHabit()">Guardar hábito</button>
     <button class="btn-s" onclick="closeModal('m-habit')">Cancelar</button>
   </div>
@@ -695,22 +754,35 @@ button,input,select,textarea{font-family:var(--font);}
   <div class="modal">
     <div class="modal-h"></div>
     <h3>Nuevo bloque</h3>
-    <div class="ig"><label class="il">Título</label><input type="text" id="nb-ti" class="if" placeholder="ej. Trabajo, Reunión, Gym..."></div>
+    <div class="ig"><label class="il">Título</label><input type="text" id="nb-ti" class="if" placeholder="ej. Matemáticas, Gym, Trabajo..."></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
       <div class="ig"><label class="il">Inicio</label><input type="time" id="nb-s" class="if" value="09:00"></div>
       <div class="ig"><label class="il">Fin</label><input type="time" id="nb-e" class="if" value="10:00"></div>
     </div>
-    <div class="ig"><label class="il">Día</label><select id="nb-d" class="if"><option value="0">Lunes</option><option value="1">Martes</option><option value="2">Miércoles</option><option value="3">Jueves</option><option value="4">Viernes</option><option value="5">Sábado</option><option value="6">Domingo</option></select></div>
+    <div class="ig">
+      <label class="il">Días de la semana</label>
+      <div class="dp" id="nb-dp">
+        <button class="dt" data-d="0" onclick="tDay(this)">L</button>
+        <button class="dt" data-d="1" onclick="tDay(this)">M</button>
+        <button class="dt" data-d="2" onclick="tDay(this)">X</button>
+        <button class="dt" data-d="3" onclick="tDay(this)">J</button>
+        <button class="dt" data-d="4" onclick="tDay(this)">V</button>
+        <button class="dt" data-d="5" onclick="tDay(this)">S</button>
+        <button class="dt" data-d="6" onclick="tDay(this)">D</button>
+      </div>
+    </div>
     <div class="ig">
       <label class="il">Color</label>
       <div class="cp" id="nb-cp">
-        <div class="co sel" data-c="#4ECFA4" style="background:#4ECFA4" onclick="pickC(this,'b')"></div>
-        <div class="co" data-c="#7B6EF6" style="background:#7B6EF6" onclick="pickC(this,'b')"></div>
+        <div class="co sel" data-c="#7B6EF6" style="background:#7B6EF6" onclick="pickC(this,'b')"></div>
+        <div class="co" data-c="#4ECFA4" style="background:#4ECFA4" onclick="pickC(this,'b')"></div>
         <div class="co" data-c="#F0AB3D" style="background:#F0AB3D" onclick="pickC(this,'b')"></div>
         <div class="co" data-c="#E8614C" style="background:#E8614C" onclick="pickC(this,'b')"></div>
         <div class="co" data-c="#E06FA0" style="background:#E06FA0" onclick="pickC(this,'b')"></div>
+        <div class="co" data-c="#5EC26A" style="background:#5EC26A" onclick="pickC(this,'b')"></div>
       </div>
     </div>
+    <div class="ig"><label class="il">Aula / lugar (opcional)</label><input type="text" id="nb-loc" class="if" placeholder="ej. Aula 3B, Gimnasio..."></div>
     <button class="btn-p" onclick="saveBloque()">Guardar bloque</button>
     <button class="btn-s" onclick="closeModal('m-bloque')">Cancelar</button>
   </div>
@@ -759,6 +831,8 @@ let S={habits:[],completions:{},blocks:[],events:[],evDone:{},settings:{noche:tr
 function load(){
   try{const p=JSON.parse(localStorage.getItem('md2')||'{}');Object.assign(S,p);}catch(e){}
   S.habits=S.habits||[];S.completions=S.completions||{};S.blocks=S.blocks||[];S.events=S.events||[];S.evDone=S.evDone||{};
+  // Migrate old blocks that use day (number) instead of days (array)
+  S.blocks.forEach(b=>{ if(typeof b.day==='number'&&!b.days) b.days=[b.day]; });
   S.settings=Object.assign({noche:true,manana:true,hora_noche:'21:30',hora_manana:'07:00',theme:'dark'},S.settings||{});
   document.documentElement.setAttribute('data-theme',S.settings.theme||'dark');
 }
@@ -1203,7 +1277,7 @@ function rHoy(){
         </div>
         <div class="hinfo">
           <div class="hname">${h.name}</div>
-          <div class="hmeta"><span>${h.time}</span>${hs>0?`<span class="hst">⚡ ${hs}d</span>`:''}</div>
+          <div class="hmeta"><span>${h.timeStart&&h.timeEnd?h.timeStart+'–'+h.timeEnd:h.time}</span>${hs>0?`<span class="hst">⚡ ${hs}d</span>`:''}</div>
         </div>
         <div class="hbar" style="background:${h.color};opacity:${isDone?0.25:0.7};"></div>
         <button class="delbtn" onclick="event.stopPropagation();delH('${h.id}')">
@@ -1215,7 +1289,7 @@ function rHoy(){
         <div class="hck" style="border-style:dashed;"></div>
         <div class="hinfo">
           <div class="hname">${h.name}</div>
-          <div class="hmeta"><span>${activeDays}</span>${hs>0?`<span class="hst">⚡ ${hs}d</span>`:''}</div>
+          <div class="hmeta"><span>${activeDays}</span>${h.timeStart&&h.timeEnd?`<span>${h.timeStart}–${h.timeEnd}</span>`:''} ${hs>0?`<span class="hst">⚡ ${hs}d</span>`:''}</div>
         </div>
         <div class="hbar" style="background:${h.color};opacity:0.2;"></div>
         <button class="delbtn" onclick="event.stopPropagation();delH('${h.id}')">
@@ -1252,7 +1326,7 @@ function toggleH(id){
   }else{S.completions[k].splice(idx,1);}
   sv();rHoy();
 }
-function delH(id){S.habits=S.habits.filter(h=>h.id!==id);sv();rHoy();toast('Hábito eliminado');}
+function delH(id){S.habits=S.habits.filter(h=>h.id!==id);S.blocks=S.blocks.filter(b=>b.habitId!==id);sv();rHoy();toast('Hábito eliminado');}
 
 // RENDER: RACHAS
 function rRachas(){
@@ -1388,7 +1462,7 @@ function rAgenda(){
   });
 
   // Bloques de horario ese día de la semana
-  const dayBlocks = (S.blocks||[]).filter(b=>b.day===dw2).sort((a,b)=>a.start.localeCompare(b.start));
+  const dayBlocks = (S.blocks||[]).filter(b=>Array.isArray(b.days)?b.days.includes(dw2):b.day===dw2).sort((a,b)=>a.start.localeCompare(b.start));
   dayBlocks.forEach(b=>{
     items.push({
       type:'block', id:b.id, time:b.start, title:b.title,
@@ -1493,18 +1567,110 @@ function toggleHabitOnDate(habitId, dateStr){
 }
 
 // RENDER: HORARIO
+function tdiff(s,e){const[sh,sm]=s.split(':').map(Number),[eh,em]=e.split(':').map(Number);const min=(eh*60+em)-(sh*60+sm);if(min<=0)return'';const h=Math.floor(min/60),m=min%60;return h>0?`${h}h${m?` ${m}min`:''}`:m+' min';}
+
+function toMins(t){const[h,m]=t.split(':').map(Number);return h*60+m;}
+
 function rHorario(){
   document.getElementById('sch-tabs').innerHTML=DS.map((d,i)=>`<div class="stab ${i===S.schDay?'active':''}" onclick="setSchDay(${i})">${d.slice(0,3)}</div>`).join('');
-  rSchB();
+  document.getElementById('sch-sub').textContent=DS[S.schDay];
+  rTimeline();
 }
+
 function setSchDay(d){S.schDay=d;rHorario();}
-function rSchB(){
-  const bl=(S.blocks||[]).filter(b=>b.day==S.schDay).sort((a,b)=>a.start.localeCompare(b.start));
-  const el=document.getElementById('sch-blocks');
-  if(!bl.length){el.innerHTML=`<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg><p>Sin bloques para este día.</p></div>`;return;}
-  el.innerHTML=bl.map(b=>`<div class="tb"><div class="tb-t">${b.start}<br>${b.end}</div><div class="tb-bar" style="background:${b.color};"></div><div class="tb-body"><div class="tb-title">${b.title}</div><div class="tb-dur">${tdiff(b.start,b.end)}</div></div><button class="delbtn" onclick="delBl('${b.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg></button></div>`).join('');
+
+function rTimeline(){
+  const blocks=(S.blocks||[]).filter(b=>Array.isArray(b.days)?b.days.includes(S.schDay):b.day==S.schDay);
+  const el=document.getElementById('sch-timeline');
+
+  if(!blocks.length){
+    el.innerHTML=`<div class="empty" style="padding-top:40px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg><p>Sin bloques para ${DS[S.schDay]}.<br>Pulsa + para añadir clases o actividades.</p></div>`;
+    return;
+  }
+
+  // Calculate visible range: earliest block - 1h to latest block + 1h, min 7:00–22:00
+  const allMins = blocks.flatMap(b=>[toMins(b.start),toMins(b.end)]);
+  const startH = Math.max(0,  Math.floor(Math.min(...allMins)/60) - 1);
+  const endH   = Math.min(24, Math.ceil(Math.max(...allMins)/60)  + 1);
+  const totalMins = (endH - startH) * 60;
+  const PX_PER_MIN = 3.2; // pixels per minute
+  const totalH = totalMins * PX_PER_MIN;
+
+  // Hour grid lines
+  let gridHtml = '';
+  for(let h = startH; h <= endH; h++){
+    const top = (h - startH) * 60 * PX_PER_MIN;
+    gridHtml += `<div class="tl-line" style="top:${top}px;"></div>`;
+    if(h < endH){
+      const topHalf = top + 30 * PX_PER_MIN;
+      gridHtml += `<div class="tl-line half" style="top:${topHalf}px;"></div>`;
+    }
+  }
+
+  // Hour labels
+  let labelsHtml = '';
+  for(let h = startH; h <= endH; h++){
+    const top = (h - startH) * 60 * PX_PER_MIN;
+    labelsHtml += `<div class="tl-hour-label" style="top:${top}px;">${String(h).padStart(2,'0')}:00</div>`;
+  }
+
+  // Now line (only if today matches this day)
+  let nowHtml = '';
+  const todayDow2 = tdw();
+  if(todayDow2 === S.schDay){
+    const now = new Date();
+    const nowMins = now.getHours()*60 + now.getMinutes();
+    if(nowMins >= startH*60 && nowMins <= endH*60){
+      const nowTop = (nowMins - startH*60) * PX_PER_MIN;
+      nowHtml = `<div class="tl-now-line" style="top:${nowTop}px;"><div class="tl-now-dot"></div></div>`;
+    }
+  }
+
+  // Detect overlapping blocks and assign columns
+  const sorted = [...blocks].sort((a,b)=>toMins(a.start)-toMins(b.start));
+  const cols = []; // each col is array of blocks
+  sorted.forEach(b=>{
+    const bStart=toMins(b.start), bEnd=toMins(b.end);
+    let placed=false;
+    for(let c=0;c<cols.length;c++){
+      const lastInCol=cols[c][cols[c].length-1];
+      if(toMins(lastInCol.end) <= bStart){ cols[c].push(b); placed=true; break; }
+    }
+    if(!placed) cols.push([b]);
+  });
+  const nCols=cols.length;
+  const blockColMap={};
+  cols.forEach((col,ci)=>col.forEach(b=>{ blockColMap[b.id]=ci; }));
+
+  // Block elements
+  let blocksHtml = '';
+  sorted.forEach(b=>{
+    const bStart=toMins(b.start), bEnd=toMins(b.end);
+    const top=(bStart - startH*60)*PX_PER_MIN;
+    const height=Math.max((bEnd-bStart)*PX_PER_MIN, 24);
+    const ci=blockColMap[b.id];
+    const colW=nCols>1?(98/nCols):96;
+    const colL=nCols>1?(ci*(100/nCols)+1):2;
+    const dur=tdiff(b.start,b.end);
+    const showSub=height>38, showDur=height>52;
+    // Light tint bg from color
+    const hexToRgba=(hex,a)=>{const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),bl2=parseInt(hex.slice(5,7),16);return`rgba(${r},${g},${bl2},${a})`;};
+    const bg=hexToRgba(b.color,0.15);
+    blocksHtml+=`<div class="tl-block" style="top:${top}px;height:${height}px;left:${colL}%;width:${colW}%;background:${bg};border-left-color:${b.color};" onclick="confirmDelBl('${b.id}')">
+      <div class="tl-block-title" style="color:${b.color};">${b.title}</div>
+      ${showSub&&b.loc?`<div class="tl-block-sub" style="color:${b.color};">${b.loc}</div>`:''}
+      ${showDur?`<div class="tl-block-dur" style="color:${b.color};">${b.start}–${b.end}${dur?' · '+dur:''}</div>`:''}
+    </div>`;
+  });
+
+  el.innerHTML=`<div class="tl-wrap"><div class="tl-hours" style="height:${totalH}px;">${labelsHtml}</div><div class="tl-grid" style="height:${totalH}px;">${gridHtml}${nowHtml}${blocksHtml}</div></div>`;
 }
-function tdiff(s,e){const[sh,sm]=s.split(':').map(Number),[eh,em]=e.split(':').map(Number);const min=(eh*60+em)-(sh*60+sm);if(min<=0)return'';const h=Math.floor(min/60),m=min%60;return h>0?`${h}h${m?` ${m}min`:''}`:m+' min';}
+
+function confirmDelBl(id){
+  const b=S.blocks.find(x=>x.id===id);
+  if(!b) return;
+  if(confirm(`Eliminar "${b.title}"?`)) delBl(id);
+}
 
 // RENDER: CALENDAR
 function rCal(){
@@ -1560,19 +1726,43 @@ function saveSetting(k,v){S.settings[k]=v;sv();setTimeout(rAjustes,80);schedNoti
 function saveHabit(){
   const name=document.getElementById('nh-n').value.trim();
   const time=document.getElementById('nh-t').value;
+  const timeStart=document.getElementById('nh-ts').value;
+  const timeEnd=document.getElementById('nh-te').value;
+  const hasSchedule = timeStart && timeEnd && toMins(timeStart)<toMins(timeEnd);
   const eid=document.getElementById('edit-id').value;
   if(!name){toast('Escribe un nombre');return;}
   const days=Array.from(document.querySelectorAll('#nh-dp .dt.on')).map(b=>parseInt(b.dataset.d));
   if(!days.length){toast('Selecciona al menos un día');return;}
-  if(eid){const h=S.habits.find(h=>h.id===eid);if(h){h.name=name;h.time=time;h.color=S.hC;h.days=days;}}
-  else{S.habits.push({id:Date.now().toString(),name,time,color:S.hC,days});}
+
+  if(eid){
+    const h=S.habits.find(h=>h.id===eid);
+    if(h){
+      h.name=name;h.time=hasSchedule?timeStart:time;h.color=S.hC;h.days=days;
+      h.timeStart=hasSchedule?timeStart:null;h.timeEnd=hasSchedule?timeEnd:null;
+      // Remove old auto-blocks for this habit, recreate if schedule set
+      S.blocks=S.blocks.filter(b=>b.habitId!==eid);
+      if(hasSchedule) days.forEach(day=>{
+        S.blocks.push({id:'h'+eid+day,title:name,start:timeStart,end:timeEnd,day,days,loc:'',color:S.hC,habitId:eid});
+      });
+    }
+  } else {
+    const hid=Date.now().toString();
+    const habitTime=hasSchedule?timeStart:time;
+    S.habits.push({id:hid,name,time:habitTime,color:S.hC,days,timeStart:hasSchedule?timeStart:null,timeEnd:hasSchedule?timeEnd:null});
+    if(hasSchedule) days.forEach(day=>{
+      S.blocks.push({id:'h'+hid+day,title:name,start:timeStart,end:timeEnd,day,days,loc:'',color:S.hC,habitId:hid});
+    });
+  }
   sv();closeModal('m-habit');rHoy();
+  if(S.tab==='horario') rHorario();
   toast(eid?'Hábito actualizado ✓':'Hábito añadido ✓');
   resetHM();
 }
 function resetHM(){
   document.getElementById('nh-n').value='';
   document.getElementById('nh-t').value='08:00';
+  document.getElementById('nh-ts').value='08:00';
+  document.getElementById('nh-te').value='09:00';
   document.getElementById('edit-id').value='';
   document.getElementById('m-habit-ttl').textContent='Nuevo hábito';
   document.querySelectorAll('#nh-dp .dt').forEach(b=>b.classList.add('on'));
@@ -1585,14 +1775,26 @@ function saveBloque(){
   const ti=document.getElementById('nb-ti').value.trim();
   const s=document.getElementById('nb-s').value;
   const e=document.getElementById('nb-e').value;
-  const day=parseInt(document.getElementById('nb-d').value);
+  const loc=document.getElementById('nb-loc').value.trim();
+  const days=Array.from(document.querySelectorAll('#nb-dp .dt.on')).map(b=>parseInt(b.dataset.d));
   if(!ti){toast('Escribe un título');return;}
-  S.blocks.push({id:Date.now().toString(),title:ti,start:s,end:e,day,color:S.bC});
-  sv();closeModal('m-bloque');S.schDay=day;rHorario();
+  if(!days.length){toast('Selecciona al menos un día');return;}
+  if(toMins(s)>=toMins(e)){toast('La hora de fin debe ser después del inicio');return;}
+  // Create one block per day (so timeline works per day)
+  days.forEach(day=>{
+    S.blocks.push({id:Date.now().toString()+day,title:ti,start:s,end:e,day,days,loc,color:S.bC});
+  });
+  sv();closeModal('m-bloque');
+  // Go to first selected day
+  S.schDay=days[0];
+  rHorario();
+  // Reset modal
   document.getElementById('nb-ti').value='';
-  toast('Bloque añadido');
+  document.getElementById('nb-loc').value='';
+  document.querySelectorAll('#nb-dp .dt').forEach(b=>b.classList.remove('on'));
+  toast(days.length>1?`Bloque añadido en ${days.length} días`:'Bloque añadido');
 }
-function delBl(id){S.blocks=S.blocks.filter(b=>b.id!==id);sv();rSchB();}
+function delBl(id){S.blocks=S.blocks.filter(b=>b.id!==id);sv();rTimeline();}
 
 // PICKERS
 function pickC(el,type){
@@ -1673,14 +1875,20 @@ function seed(){
   if(S.seeded) return;   // already ran before — never re-seed
   S.seeded = true;
   S.habits=[
-    {id:'1',name:'Meditación',time:'07:00',color:'#7B6EF6',days:[0,1,2,3,4,5,6]},
-    {id:'2',name:'Ejercicio',time:'08:00',color:'#F0AB3D',days:[0,1,2,3,4]},
-    {id:'3',name:'Leer 30 min',time:'21:30',color:'#4ECFA4',days:[0,1,2,3,4,5,6]},
+    {id:'1',name:'Meditación',time:'07:00',color:'#7B6EF6',days:[0,1,2,3,4,5,6],timeStart:'07:00',timeEnd:'07:30'},
+    {id:'2',name:'Ejercicio',time:'08:00',color:'#F0AB3D',days:[0,1,2,3,4],timeStart:'08:00',timeEnd:'09:00'},
+    {id:'3',name:'Leer 30 min',time:'21:30',color:'#4ECFA4',days:[0,1,2,3,4,5,6],timeStart:'21:30',timeEnd:'22:00'},
   ];
   S.blocks=[
-    {id:'b1',title:'Trabajo profundo',start:'09:00',end:'11:30',day:0,color:'#7B6EF6'},
-    {id:'b2',title:'Reunión de equipo',start:'12:00',end:'12:30',day:0,color:'#4ECFA4'},
-    {id:'b3',title:'Ejercicio',start:'08:00',end:'09:00',day:0,color:'#F0AB3D'},
+    {id:'b1',title:'Trabajo profundo',start:'09:00',end:'11:30',day:0,days:[0,1,2,3,4],loc:'',color:'#7B6EF6'},
+    {id:'b2',title:'Reunión de equipo',start:'12:00',end:'12:30',day:0,days:[0],loc:'Sala B',color:'#4ECFA4'},
+    {id:'b3',title:'Ejercicio',start:'08:00',end:'09:00',day:0,days:[0,2,4],loc:'Gimnasio',color:'#F0AB3D',habitId:'2'},
+    {id:'b4',title:'Trabajo profundo',start:'09:00',end:'11:30',day:1,days:[0,1,2,3,4],loc:'',color:'#7B6EF6'},
+    {id:'b5',title:'Ejercicio',start:'08:00',end:'09:00',day:2,days:[0,2,4],loc:'Gimnasio',color:'#F0AB3D'},
+    {id:'b6',title:'Trabajo profundo',start:'09:00',end:'11:30',day:2,days:[0,1,2,3,4],loc:'',color:'#7B6EF6'},
+    {id:'b7',title:'Ejercicio',start:'08:00',end:'09:00',day:4,days:[0,2,4],loc:'Gimnasio',color:'#F0AB3D'},
+    {id:'b8',title:'Trabajo profundo',start:'09:00',end:'11:30',day:3,days:[0,1,2,3,4],loc:'',color:'#7B6EF6'},
+    {id:'b9',title:'Trabajo profundo',start:'09:00',end:'11:30',day:4,days:[0,1,2,3,4],loc:'',color:'#7B6EF6'},
   ];
   sv();
 }
